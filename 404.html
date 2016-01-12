@@ -44,8 +44,6 @@
 		
 		<p class="header-subtitle">iOS菜鸟的成长之路</p>
 		
-		
-		<form><input type="text" class="search" placeholder=" Search..."></form>
 				
 
 
@@ -285,7 +283,7 @@
         isArchive: false,
         isTag: false,
         isCategory: false,
-        open_in_new: false
+        open_in_new: true
         }
         </script>
      
@@ -321,7 +319,7 @@
 <script src="/js/main.js" type="text/javascript"></script>
 
 <script>
-  var backgroundnum = 1;
+  var backgroundnum = 10;
   var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
 
   $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
