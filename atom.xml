@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingxianwei.github.io/"/>
-  <updated>2016-05-15T14:36:42.000Z</updated>
+  <updated>2016-05-15T14:37:19.000Z</updated>
   <id>http://mingxianwei.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://mingxianwei.github.io/2016/03/08/iOSapp%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%96%B0%E6%89%8B%E6%8C%87%E5%BC%95/"/>
     <id>http://mingxianwei.github.io/2016/03/08/iOSapp中添加新手指引/</id>
     <published>2016-03-08T13:41:58.000Z</published>
-    <updated>2016-05-15T14:36:42.000Z</updated>
+    <updated>2016-05-15T14:37:19.000Z</updated>
     
     <content type="html">&lt;p&gt;先不说话，先直接上效果图&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/guide/newUserGuide1.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/guide/newUserGuide4.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;/p&gt;
 &lt;p&gt;基本思路就是在一个View 上加上蒙版 msak 。不贴代码的都是流氓，So ，代码如下：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
