@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>我是一只小小小鸟</title>
+  <subtitle>iOS菜鸟的成长之路</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mingxianwei.github.io/"/>
+  <updated>2016-03-20T12:20:36.000Z</updated>
+  <id>http://mingxianwei.github.io/</id>
+  
+  <author>
+    <name>小土豆</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS app中添加新手指引</title>
+    <link href="http://mingxianwei.github.io/2016/03/08/iOSapp%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%96%B0%E6%89%8B%E6%8C%87%E5%BC%95/"/>
+    <id>http://mingxianwei.github.io/2016/03/08/iOSapp中添加新手指引/</id>
+    <published>2016-03-08T13:41:58.000Z</published>
+    <updated>2016-03-20T12:20:36.000Z</updated>
+    
+    <content type="html">&lt;p&gt;先不说话，先直接上效果图&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide1.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide2.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide3.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide4.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;/p&gt;
+&lt;p&gt;基本思路就是在一个View 上加上蒙版 msak 。不贴代码的都是流氓，So ，代码如下：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#pragma mark - ===== 新手指引 =====&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; *  新手指引&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)newUserGuide&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 这里创建指引在这个视图在window上&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;CGRect&lt;/span&gt; frame = [&lt;span class=&quot;built_in&quot;&gt;UIScreen&lt;/span&gt; mainScreen]&lt;span class=&quot;variable&quot;&gt;.bounds&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;UIView&lt;/span&gt; * bgView = [[[&lt;span class=&quot;built_in&quot;&gt;UIView&lt;/span&gt; alloc]initWithFrame:frame]autorelease];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    bgView&lt;span class=&quot;variable&quot;&gt;.backgroundColor&lt;/span&gt; = HEX_RGBA(&lt;span class=&quot;number&quot;&gt;0x323232&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.8&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;UITapGestureRecognizer&lt;/span&gt; * tap = [[[&lt;span class=&quot;built_in&quot;&gt;UITapGestureRecognizer&lt;/span&gt; alloc]initWithTarget:&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; action:&lt;span class=&quot;keyword&quot;&gt;@selector&lt;/span&gt;(sureTapClick:)]autorelease];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [bgView addGestureRecognizer:tap];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [[&lt;span class=&quot;built_in&quot;&gt;UIApplication&lt;/span&gt; sharedApplication]&lt;span class=&quot;variable&quot;&gt;.keyWindow&lt;/span&gt; addSubview:bgView];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//create path 重点来了（**这里需要添加第一个路径）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;UIBezierPath&lt;/span&gt; *path = [&lt;span class=&quot;built_in&quot;&gt;UIBezierPath&lt;/span&gt; bezierPathWithRect:frame];   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 这里添加第二个路径 （这个是圆）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [path appendPath:[&lt;span class=&quot;built_in&quot;&gt;UIBezierPath&lt;/span&gt; bezierPathWithArcCenter:&lt;span class=&quot;built_in&quot;&gt;CGPointMake&lt;/span&gt;(frame&lt;span class=&quot;variable&quot;&gt;.size&lt;/span&gt;&lt;span class=&quot;variable&quot;&gt;.width&lt;/span&gt; - &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;42&lt;/span&gt;) radius:&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt; startAngle:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; endAngle:&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*M_PI clockwise:&lt;span class=&quot;literal&quot;&gt;NO&lt;/span&gt;]]; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 这里添加第二个路径 （这个是矩形）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//[path appendPath:[[UIBezierPath bezierPathWithRoundedRect:CGRectMake(frame.size.width/2.0-1, 234, frame.size.width/2.0+1, 55) cornerRadius:5] bezierPathByReversingPath]];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;CAShapeLayer&lt;/span&gt; *shapeLayer = [&lt;span class=&quot;built_in&quot;&gt;CAShapeLayer&lt;/span&gt; layer];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    shapeLayer&lt;span class=&quot;variable&quot;&gt;.path&lt;/span&gt; = path&lt;span class=&quot;variable&quot;&gt;.CGPath&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//shapeLayer.strokeColor = [UIColor blueColor].CGColor;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [bgView&lt;span class=&quot;variable&quot;&gt;.layer&lt;/span&gt; setMask:shapeLayer];  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;UIImageView&lt;/span&gt; * imageView = [[[&lt;span class=&quot;built_in&quot;&gt;UIImageView&lt;/span&gt; alloc]initWithFrame:&lt;span class=&quot;built_in&quot;&gt;CGRectMake&lt;/span&gt;(frame&lt;span class=&quot;variable&quot;&gt;.size&lt;/span&gt;&lt;span class=&quot;variable&quot;&gt;.width&lt;/span&gt; -&lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;72&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;270&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;137&lt;/span&gt;)]autorelease];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    imageView&lt;span class=&quot;variable&quot;&gt;.image&lt;/span&gt; = [&lt;span class=&quot;built_in&quot;&gt;UIImage&lt;/span&gt; imageNamed:&lt;span class=&quot;string&quot;&gt;@&quot;CouponBoard_guid&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [bgView addSubview:imageView];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; *   新手指引确定&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)sureTapClick:(&lt;span class=&quot;built_in&quot;&gt;UITapGestureRecognizer&lt;/span&gt; *)tap&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;UIView&lt;/span&gt; * view = tap&lt;span class=&quot;variable&quot;&gt;.view&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [view removeFromSuperview];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [view removeAllSubviews];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [view removeGestureRecognizer:tap];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [[&lt;span class=&quot;built_in&quot;&gt;NSUserDefaults&lt;/span&gt; standardUserDefaults] setBool:&lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt; forKey:&lt;span class=&quot;string&quot;&gt;@&quot;firstCouponBoard_iPhone&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其他方法自行google 这里推荐一个&lt;a href=&quot;http://www.jianshu.com/p/00d4fe5a3c1a&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博文&lt;/a&gt; &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;先不说话，先直接上效果图&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide1.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide2.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide3.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/newUserGuide4.jpeg&quot; alt=&quot;[这个是矩形&quot; width=&quot;375&quot; height=&quot;667&quot;&gt;&lt;/p&gt;
+&lt;p&gt;基本思路就是在一个View 上加上蒙版 msak 。不贴代码的都是流氓，So ，代码如下：&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="http://mingxianwei.github.io/tags/iOS/"/>
+    
+      <category term="启动图" scheme="http://mingxianwei.github.io/tags/%E5%90%AF%E5%8A%A8%E5%9B%BE/"/>
+    
+      <category term="新手指引" scheme="http://mingxianwei.github.io/tags/%E6%96%B0%E6%89%8B%E6%8C%87%E5%BC%95/"/>
+    
+      <category term="蒙版层" scheme="http://mingxianwei.github.io/tags/%E8%92%99%E7%89%88%E5%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS启动图（launimage）尺寸规格</title>
+    <link href="http://mingxianwei.github.io/2016/01/12/iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%EF%BC%88launimage%EF%BC%89%E5%B0%BA%E5%AF%B8%E8%A7%84%E6%A0%BC/"/>
+    <id>http://mingxianwei.github.io/2016/01/12/iOS启动图（launimage）尺寸规格/</id>
+    <published>2016-01-12T12:25:21.000Z</published>
+    <updated>2016-01-12T13:26:13.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在开发iOSapp时候，需要准备以下几张启动图&lt;strong&gt;&lt;em&gt;（这里只是包含iPhone,不包含ipad尺寸）&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/launimage.jpeg&quot; alt=&quot;启动图&quot;&gt;&lt;/p&gt;
+&lt;h5 id=&quot;u5C3A_u5BF8_u8BF4_u660E&quot;&gt;&lt;a href=&quot;#u5C3A_u5BF8_u8BF4_u660E&quot; class=&quot;headerlink&quot; title=&quot;尺寸说明&quot;&gt;&lt;/a&gt;尺寸说明&lt;/h5&gt;&lt;p&gt;　　　　iPhone Portrait iOS 8,9-Retina HD 5.5 （1242×2208） @3x&lt;/p&gt;
+&lt;p&gt;　　　　iPhone Portrait iOS 8,9-Retina HD 4.7 （750×1334） @2x&lt;/p&gt;
+&lt;p&gt;　　　　iPhone Portrait iOS 7,9-2x （640×960） @2x&lt;/p&gt;
+&lt;p&gt;　　　　iPhone Portrait iOS 7,9-Retina 4 （640×1136） @2x&lt;/p&gt;
+&lt;p&gt;　　　　iPhone Portrait iOS 5,6-1x （320×480） @1x&lt;/p&gt;
+&lt;p&gt;　　　　iPhone Portrait iOS 5,6-2x （640×960） @2x&lt;/p&gt;
+&lt;p&gt;　　　　iPhone Portrait iOS 5,6-Retina4 （640×1136） @2x&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在开发iOSapp时候，需要准备以下几张启动图&lt;strong&gt;&lt;em&gt;（这里只是包含iPhone,不包含ipad尺寸）&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/launimage.j
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="http://mingxianwei.github.io/tags/iOS/"/>
+    
+      <category term="启动图" scheme="http://mingxianwei.github.io/tags/%E5%90%AF%E5%8A%A8%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写在开篇</title>
+    <link href="http://mingxianwei.github.io/2015/12/17/%E5%86%99%E5%9C%A8%E5%BC%80%E7%AF%87/"/>
+    <id>http://mingxianwei.github.io/2015/12/17/写在开篇/</id>
+    <published>2015-12-17T13:00:00.000Z</published>
+    <updated>2016-01-12T14:04:05.000Z</updated>
+    
+    <content type="html">&lt;p&gt;　　博客系统已经搭好了许久了，一直不敢提笔写，因为一直觉得自己水平不够，虽然在一些个人的博客网站也写过，但是总是觉得github上都是大神（虽然我写的他们也不怎么会看到），得等到自己在某个领域有些沉淀、能够有效的帮助别人解决问题才可以开始；加之我本来生性有些懒惰，虽然内心一直觉得要努力奋斗，奈何内心一直没能驱动身体去执行心中所想；再者本来处女座的人就纠结，总觉得等一切都妥当了之后才觉得应该开始，然而，哪有一切都妥当的时候呢！ &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;　　经过几个月的赶项目，终于在这些时候取得阶段性胜利，也就有时间来想想自己该干些什么的时候。翻看了下自己原来定下的计划，忽然发现时间已到年尾。。。&lt;br&gt;　　今早读到一篇&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3NzM0NzkxMQ==&amp;amp;mid=402658461&amp;amp;idx=3&amp;amp;sn=47175ee0be4b266f5aa42d49693bf02e&amp;amp;scene=0#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文章&lt;/a&gt;说到
+　&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;　　写技术博客是一种可以快速提高的方法，但是一个人能坚持每周写技术博客，那是需要付出很多代价，写博客并不是要我们写出高质量的文章才发表，我们可以分享自 己的一些小经验，也可以分享自己的体会。一样东西在你大脑里，并不表示你已经掌握了，如果你能说给别人听，或者用文字表达出来，那首先你要将这些知识点整 理清楚才好表达。我经常认为自己已经对某个问题了解了，但是在整理技术博客时发现自己的知识盲点，然后再去查找知识来补充自己的盲点，直到最后搞清楚了才 算告一段落。&lt;/p&gt;
+&lt;p&gt;　　有些人不喜欢分享或者害怕分享，但是在这个世界，只要不是公司机密或商业秘密，拿出来分享可以让你得到更多同行的反馈，网络上的人会给你相对真实的反馈，因为大部份人与你没有利益关系。&lt;/p&gt;
+&lt;p&gt;　　新人不要害怕自己分享的知识是否有技术含量，只要你认为有价值，都可以拿出来，这不仅可以给别人提供知识，也可以自己整理思路，还可以得到网友的反馈。如果 你的知识没有价值，分享出来也没有关系，如果你的文章技术含量低，怕被人鄙视，那是你这个人不敢承认现实，因为同事与朋友可能不会说你的文章很菜，就算被 鄙视了又如何，有时被人鄙视也是一种前进的动力。有人说如果几年后我进步了很多，但还让人看到我这些初学时弱智的文档，误人子弟，不好意思，Ok，那个时 候可以完全把文档删除，其实我更喜欢放在那里品味自己成长的过程，把有误导的地方更正。&lt;/p&gt;
+&lt;p&gt;　　我知道有一个技术博客作者，数据库专家&lt;a href=&quot;http://yangtingkun.itpub.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;杨廷琨&lt;/a&gt;，他几年来，每天坚持写一篇技术博客，现在已 经有2千多篇，我的ORACLE数据库水平比他差很多，但是我也偶尔看到一些他新写的文档我几年前就会了，但这些并不妨碍我对这位博客作者的敬佩，因为他 的博客让我学到了很多知识。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;至此我才决定了开始梳理我的知识，同时我要对自己说  &lt;strong&gt;&lt;em&gt;种一棵树最好的时间是在十年前和现在&lt;/em&gt;&lt;/strong&gt;。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　博客系统已经搭好了许久了，一直不敢提笔写，因为一直觉得自己水平不够，虽然在一些个人的博客网站也写过，但是总是觉得github上都是大神（虽然我写的他们也不怎么会看到），得等到自己在某个领域有些沉淀、能够有效的帮助别人解决问题才可以开始；加之我本来生性有些懒惰，虽然内心一直觉得要努力奋斗，奈何内心一直没能驱动身体去执行心中所想；再者本来处女座的人就纠结，总觉得等一切都妥当了之后才觉得应该开始，然而，哪有一切都妥当的时候呢！
+    
+    </summary>
+    
+    
+      <category term="新的开始" scheme="http://mingxianwei.github.io/tags/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    
+  </entry>
+  
+</feed>
