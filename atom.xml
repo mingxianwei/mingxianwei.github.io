@@ -51,22 +51,22 @@
     <link href="http://mingxianwei.github.io/2016/02/25/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BiOS%E5%B7%B2%E4%B8%8A%E6%9E%B6app%E5%B4%A9%E6%BA%83%E5%88%86%E5%B8%83%E3%80%81%E5%AE%9A%E4%BD%8Dcrash%E5%8F%91%E7%94%9F%E7%9A%84%E8%A1%8C/"/>
     <id>http://mingxianwei.github.io/2016/02/25/如何查看iOS已上架app崩溃分布、定位crash发生的行/</id>
     <published>2016-02-25T04:50:59.000Z</published>
-    <updated>2016-05-15T13:56:21.000Z</updated>
+    <updated>2016-05-17T12:18:52.000Z</updated>
     
     <content type="html">&lt;p&gt;在app上线后我们需要知道app运行的怎么样，下载的人多不多，这些呢就需要在iTunes connect中查看。对于开发人员来说，查看app的崩溃情况尤为重要。下面介绍我是怎么样查看app的崩溃情况的。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;一、先分析app的崩溃的分布情况 这个需要有（iTunes connect账号），通过分析我们可以查看到自己的app奔溃主要发生在那些机型上。 如果没有账号，别着急，直接走第二步。&lt;/p&gt;
 &lt;p&gt;二、打开xcode，下载崩溃日志，直接定位出问题代码行。&lt;/p&gt;
-&lt;p&gt;1、找到开发者账号进入iTunes connect&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-a529c42a5a247b34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;进入iTunes connect的界面.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;2、进入app分析，查看app查看情况，app下载量，app崩溃情况&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-9e500a7176d98758.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;查看app情况&quot;&gt;&lt;/p&gt;
+&lt;p&gt;1、找到开发者账号进入iTunes connect&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/1.png&quot; alt=&quot;进入iTunes connect的界面.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2、进入app分析，查看app查看情况，app下载量，app崩溃情况&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/2.pn&quot; alt=&quot;查看app情况&quot;&gt;&lt;/p&gt;
 &lt;p&gt;3、这里我们先关注app崩溃的情况 可以看到历史累计崩溃11次点击这个崩溃的情况进入分析实际上的app的崩溃的分布版本和手机系统版本&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-e489e9a71d0aaa38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;筛选查看崩溃分布&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-531d174b74ab3ca5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;筛选查看崩溃分布&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-35471cbfca9bb9b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;筛选查看崩溃分布&quot;&gt;&lt;br&gt;可以看到app崩溃主要集中在iOS9.2系统中，app版本3.2中。&lt;br&gt;如果上级需要，可以针对崩溃的发生出一些报告。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/3.pn&quot; alt=&quot;筛选查看崩溃分布&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/4.png&quot; alt=&quot;筛选查看崩溃分布&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/5.pn&quot; alt=&quot;筛选查看崩溃分布&quot;&gt;&lt;br&gt;可以看到app崩溃主要集中在iOS9.2系统中，app版本3.2中。&lt;br&gt;如果上级需要，可以针对崩溃的发生出一些报告。&lt;/p&gt;
 &lt;p&gt;接下来，就直接定位代码崩溃发生的行了。&lt;/p&gt;
-&lt;p&gt;4、打开xcode 先要下载崩溃日志&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-76f9e63cca9e03b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;打开xcode 先要下载崩溃日志&quot;&gt;&lt;/p&gt;
-&lt;p&gt;5、选择crashes&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-4773bf8cbd8e7c88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;选择crashes&quot;&gt;&lt;/p&gt;
-&lt;p&gt;6、查看相应版本的崩溃日志&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-ab0a3570cc610999.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;查看相应版本的崩溃日志&quot;&gt;&lt;/p&gt;
-&lt;p&gt;7、点击对应的崩溃日志，后面会出现一个箭头，点击箭头就会进入到Xcode中对应的代码行，就可以根据自己的程序逻辑做出相应修改。&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1182487-da08dbcdb0491cbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;查看代码做出相应修改&quot;&gt;&lt;/p&gt;
+&lt;p&gt;4、打开xcode 先要下载崩溃日志&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/6.pn&quot; alt=&quot;打开xcode 先要下载崩溃日志&quot;&gt;&lt;/p&gt;
+&lt;p&gt;5、选择crashes&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/7.png&quot; alt=&quot;选择crashes&quot;&gt;&lt;/p&gt;
+&lt;p&gt;6、查看相应版本的崩溃日志&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/8.pn&quot; alt=&quot;查看相应版本的崩溃日志&quot;&gt;&lt;/p&gt;
+&lt;p&gt;7、点击对应的崩溃日志，后面会出现一个箭头，点击箭头就会进入到Xcode中对应的代码行，就可以根据自己的程序逻辑做出相应修改。&lt;br&gt;&lt;img src=&quot;http://mingxianwei.github.io/image/crash/9.pn&quot; alt=&quot;查看代码做出相应修改&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
