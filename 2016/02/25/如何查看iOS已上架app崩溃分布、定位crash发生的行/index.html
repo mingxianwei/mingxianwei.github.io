@@ -2,16 +2,16 @@
 <p>一、先分析app的崩溃的分布情况 这个需要有（iTunes connect账号），通过分析我们可以查看到自己的app奔溃主要发生在那些机型上。 如果没有账号，别着急，直接走第二步。</p>
 <p>二、打开xcode，下载崩溃日志，直接定位出问题代码行。</p>
 <p>1、找到开发者账号进入iTunes connect<br><img src="http://mingxianwei.github.io/image/crash/1.png" alt="进入iTunes connect的界面.png"></p>
-<p>2、进入app分析，查看app查看情况，app下载量，app崩溃情况<br><img src="http://mingxianwei.github.io/image/crash/2.pn" alt="查看app情况"></p>
+<p>2、进入app分析，查看app查看情况，app下载量，app崩溃情况<br><img src="http://mingxianwei.github.io/image/crash/2.png" alt="查看app情况"></p>
 <p>3、这里我们先关注app崩溃的情况 可以看到历史累计崩溃11次点击这个崩溃的情况进入分析实际上的app的崩溃的分布版本和手机系统版本</p>
-<p><img src="http://mingxianwei.github.io/image/crash/3.pn" alt="筛选查看崩溃分布"></p>
+<p><img src="http://mingxianwei.github.io/image/crash/3.png" alt="筛选查看崩溃分布"></p>
 <p><img src="http://mingxianwei.github.io/image/crash/4.png" alt="筛选查看崩溃分布"></p>
-<p><img src="http://mingxianwei.github.io/image/crash/5.pn" alt="筛选查看崩溃分布"><br>可以看到app崩溃主要集中在iOS9.2系统中，app版本3.2中。<br>如果上级需要，可以针对崩溃的发生出一些报告。</p>
+<p><img src="http://mingxianwei.github.io/image/crash/5.png" alt="筛选查看崩溃分布"><br>可以看到app崩溃主要集中在iOS9.2系统中，app版本3.2中。<br>如果上级需要，可以针对崩溃的发生出一些报告。</p>
 <p>接下来，就直接定位代码崩溃发生的行了。</p>
-<p>4、打开xcode 先要下载崩溃日志<br><img src="http://mingxianwei.github.io/image/crash/6.pn" alt="打开xcode 先要下载崩溃日志"></p>
+<p>4、打开xcode 先要下载崩溃日志<br><img src="http://mingxianwei.github.io/image/crash/6.png" alt="打开xcode 先要下载崩溃日志"></p>
 <p>5、选择crashes<br><img src="http://mingxianwei.github.io/image/crash/7.png" alt="选择crashes"></p>
-<p>6、查看相应版本的崩溃日志<br><img src="http://mingxianwei.github.io/image/crash/8.pn" alt="查看相应版本的崩溃日志"></p>
-<p>7、点击对应的崩溃日志，后面会出现一个箭头，点击箭头就会进入到Xcode中对应的代码行，就可以根据自己的程序逻辑做出相应修改。<br><img src="http://mingxianwei.github.io/image/crash/9.pn" alt="查看代码做出相应修改"></p>
+<p>6、查看相应版本的崩溃日志<br><img src="http://mingxianwei.github.io/image/crash/8.png" alt="查看相应版本的崩溃日志"></p>
+<p>7、点击对应的崩溃日志，后面会出现一个箭头，点击箭头就会进入到Xcode中对应的代码行，就可以根据自己的程序逻辑做出相应修改。<br><img src="http://mingxianwei.github.io/image/crash/9.png" alt="查看代码做出相应修改"></p>
 </div></article></div></section><footer><div class="paginator"><a href="/2016/03/08/iOSapp中添加新手指引/" class="prev">上一篇</a><a href="/2016/01/12/iOS启动图（launimage）尺寸规格/" class="next">下一篇</a></div><div data-thread-key="2016/02/25/如何查看iOS已上架app崩溃分布、定位crash发生的行/" data-title="如何查看iOS已上架app崩溃分布、定位crash发生的行" data-url="http://mingxianwei.github.io/2016/02/25/如何查看iOS已上架app崩溃分布、定位crash发生的行/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"mxwblog"};
 (function() {
     var ds = document.createElement('script');
