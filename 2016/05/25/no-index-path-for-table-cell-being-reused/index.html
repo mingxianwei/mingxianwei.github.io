@@ -2,9 +2,10 @@
 <p>那么遇到这种情况该怎么解决呢？ 怎么才能影响最小 改动最小来搞定这个问题呢？其实我们只需要在返回这个cell 的时候在这个cell上套一层View。我是这样解决的。</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> FMSectionHeaderView *cell = [_tableView dequeueReusableCellWithIdentifier:<span class="built_in">NSStringFromClass</span>([FMSectionHeaderView class])];</span><br><span class="line"><span class="comment">//  直接把cell 当作header 会导致 no index path for table cell being reused 的问题</span></span><br><span class="line"><span class="built_in">UIView</span> * view = [[<span class="built_in">UIView</span> alloc] initWithFrame:cell<span class="variable">.frame</span>];</span><br><span class="line">cell<span class="variable">.autoresizingMask</span> = <span class="built_in">UIViewAutoresizingFlexibleHeight</span> | <span class="built_in">UIViewAutoresizingFlexibleWidth</span>;</span><br><span class="line">[view addSubview:cell];</span><br><span class="line"> <span class="keyword">return</span> view;</span><br></pre></td></tr></table></figure>
 <p>近期，参与了一个项目的维护，发现修改别人的代码真的是一件苦逼的事情，遇到一半英文一半拼音的变量名简直就想打人；当你发现了奇怪的函数名时不要慌，你要学会适应，因为在做项目维护的时候，你会经常遇到。突然想起了别人说的 <code>一个挫程序员养活了一大帮程序员</code> 所以墙裂呼吁大家不管写哪种语言一定要先读读编码规范。哪怕写的程序有bug 但是最起码的规范遵守了，别人看着代码心情也舒畅。</p>
-<p>=========================================================================================</p>
-<p>   <em>转载请注明出处:</em><br>   <em>原文地址：<a href="http://mingxianwei.github.io/2016/05/25/no-index-path-for-table-cell-being-reused/">http://mingxianwei.github.io/2016/05/25/no-index-path-for-table-cell-being-reused/</a></em><br>   <em>作者：小土豆</em>    </p>
-<p>=========================================================================================<br>hex推荐文章</p>
+<blockquote>
+<p> <em>转载请注明出处:</em><br>    <em>原文地址：<a href="http://mingxianwei.github.io/2016/05/25/no-index-path-for-table-cell-being-reused/">http://mingxianwei.github.io/2016/05/25/no-index-path-for-table-cell-being-reused/</a></em><br>    <em>作者：小土豆</em> </p>
+</blockquote>
+<p>hex推荐文章</p>
 <ul>
 <li><a href="https://github.com/QianKaiLu/Objective-C-Coding-Guidelines-In-Chinese" target="_blank" rel="external">Objective-C-Coding-Guidelines-In-Chinese iOS代码规范</a></li>
 </ul>
