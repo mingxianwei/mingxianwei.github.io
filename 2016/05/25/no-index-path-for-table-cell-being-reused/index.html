@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> No index path for table cell being reused · 我是一只小小小鸟</title><meta name="description" content="no index path for table cell being reused 的解决办法"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/u/2501078311" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="http://mingxianwei.github.io" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="http://www.jianshu.com/users/3b591f2af34a/latest_articles" target="_blank" class="nav-list-link">JIANSHU</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">No index path for table cell being reused</h1><div class="post-info">May 25, 2016</div><div class="post-content"><p>你有没有这样的经历，当你需要刷新某一行的时候发现，界面出现了一块块的空白。而那些空白所在的位置是一些<strong>section</strong>的<strong><em>headerView</em></strong>或者<strong><em>footerview</em></strong> 同时还输出 <code>no index path for table cell being reused</code>。 造成这种问题的原应很可能是 在section的headerView／footerView使用的是UITableViewCell 类型。<br><a id="more"></a></p>
+<p>那么遇到这种情况该怎么解决呢？ 怎么才能影响最小 改动最小来搞定这个问题呢？其实我们只需要在返回这个cell 的时候在这个cell上套一层View。我是这样解决的。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> FMSectionHeaderView *cell = [_tableView dequeueReusableCellWithIdentifier:<span class="built_in">NSStringFromClass</span>([FMSectionHeaderView class])];</span><br><span class="line"><span class="comment">//  直接把cell 当作header 会导致 no index path for table cell being reused 的问题</span></span><br><span class="line"><span class="built_in">UIView</span> * view = [[<span class="built_in">UIView</span> alloc] initWithFrame:cell<span class="variable">.frame</span>];</span><br><span class="line">cell<span class="variable">.autoresizingMask</span> = <span class="built_in">UIViewAutoresizingFlexibleHeight</span> | <span class="built_in">UIViewAutoresizingFlexibleWidth</span>;</span><br><span class="line">[view addSubview:cell];</span><br><span class="line"> <span class="keyword">return</span> view;</span><br></pre></td></tr></table></figure>
+<p>近期，参与了一个项目的维护，发现修改别人的代码真的是一件苦逼的事情，遇到一半英文一半拼音的变量名简直就想打人；当你发现了奇怪的函数名时不要慌，你要学会适应，因为在做项目维护的时候，你会经常遇到。突然想起了别人说的 <code>一个挫程序员养活了一大帮程序员</code> 所以墙裂呼吁大家不管写哪种语言一定要先读读编码规范。哪怕写的程序有bug 但是最起码的规范遵守了，别人看着代码心情也舒畅。</p>
+<p>========================================================================================</p>
+<p>   <em>转载请注明出处:</em><br>   <em>原文地址：<a href="http://mingxianwei.github.io/no-index-path-for-table-cell-being-reused">http://mingxianwei.github.io/no-index-path-for-table-cell-being-reused</a></em><br>   <em>作者：小土豆</em></p>
+<p>=========================================================================================<br>推荐文章</p>
+<ul>
+<li><a href="https://github.com/QianKaiLu/Objective-C-Coding-Guidelines-In-Chinese" target="_blank" rel="external">Objective-C-Coding-Guidelines-In-Chinese iOS代码规范</a></li>
+</ul>
+<ul>
+<li><p><a href="http://www.csdn.net/article/2015-06-01/2824818-objective-c-style-guide" target="_blank" rel="external">Objective-C编码规范：26个方面解决iOS开发问题</a></p>
+</li>
+<li><p><a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html" target="_blank" rel="external">iOS App Programming Guide</a></p>
+</li>
+<li><p><a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html" target="_blank" rel="external">App Programming Guide for iOS</a></p>
+</li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/03/08/iOSapp中添加新手指引/" class="next">下一篇</a></div><div data-thread-key="2016/05/25/no-index-path-for-table-cell-being-reused/" data-title="No index path for table cell being reused" data-url="http://mingxianwei.github.io/2016/05/25/no-index-path-for-table-cell-being-reused/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"mxwblog"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div class="copyright"><p>Copyright© 2015 - 2016 <a href="http://mingxianwei.github.io">小土豆</a>,All Rights Reserved.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
