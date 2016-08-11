@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingxianwei.github.io/"/>
-  <updated>2016-07-05T15:07:52.000Z</updated>
+  <updated>2016-08-11T14:34:06.000Z</updated>
   <id>http://mingxianwei.github.io/</id>
   
   <author>
@@ -20,17 +20,17 @@
     <link href="http://mingxianwei.github.io/2016/07/05/%E5%90%AF%E5%8A%A8%E9%A1%B5%E5%B9%BF%E5%91%8A%E5%8A%A0%E8%BD%BD-%E5%B8%A6%E8%BF%9B%E5%BA%A6%E6%9D%A1%E7%9A%84webView/"/>
     <id>http://mingxianwei.github.io/2016/07/05/启动页广告加载-带进度条的webView/</id>
     <published>2016-07-05T13:44:02.000Z</published>
-    <updated>2016-07-05T15:07:52.000Z</updated>
+    <updated>2016-08-11T14:34:06.000Z</updated>
     
     <content type="html">&lt;p&gt;首先我们看效果图&lt;br&gt;[&lt;img src=&quot;http://mingxianwei.github.io/image/MXWLanchAD/MXWLanchAD.gif&quot; alt=&quot;&quot;&gt;]&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;#1. 启动页部分&lt;/p&gt;
-&lt;p&gt;##基本思路如下： &lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;1. 启动页部分&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;##基本思路如下:&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;在app启动的时候 在window对象上添加一个视图，我这里用的是一张图片 （app启动图）这样就能遮挡住app本来的启动图片。&lt;/li&gt;
 &lt;li&gt;在在这个视图上添加一个广告图片，至于这个广告图片里的获取方式可以根据自己地项目的实际情况来定。&lt;/li&gt;
 &lt;li&gt;在这个视图上添加一些动画，和一些触摸事件用来处理这个点击广告也对应的事件响应。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;##在这个中需要注意的问题有几点：&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;在这个中需要注意的问题有几点：&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;该代码试用用于启动图是使用lanchImage方式而不是LaunchScreen.storyboard/LaunchScreen.xib。&lt;/li&gt;
 &lt;li&gt;需要给项目设置几个点如下图:&lt;ul&gt;
@@ -58,7 +58,7 @@
 &lt;li&gt;&lt;p&gt;根据对应的屏幕取出对应的图片 添加到窗口上 遮盖启动图就是如图效果。也可以做类似Twitter启动时那样的启动动画，原理基本而一致。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;#2. 带进度条的webView的实现&lt;br&gt;其实这里带进度条的webView主要使用到了&lt;code&gt;NJKWebViewProgress&lt;/code&gt; 。基本原理就是修改webView的dalegate 使用NJKWebViewProgress 类来loadRequest；NJKWebViewProgress就能够统计一个URL中一共有多少资源需要加载，在webViewDidFinishLoad、didFailLoadWithError中标记某个链接加载成功。通过总的链接数目和已经加载的链接数目大致估算当前的加载进度。进度通过NJKWebViewProgress 的代理回传到webView的控制器中在控制器中展示当前的进度条。&lt;br&gt;Demo地址：&lt;a href=&quot;https://github.com/mingxianwei/MXWLanchAD&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/mingxianwei/MXWLanchAD&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;2. 带进度条的webView的实现&lt;/h2&gt;&lt;br&gt;其实这里带进度条的webView主要使用到了&lt;code&gt;NJKWebViewProgress&lt;/code&gt; 。基本原理就是修改webView的dalegate 使用NJKWebViewProgress 类来loadRequest；NJKWebViewProgress就能够统计一个URL中一共有多少资源需要加载，在webViewDidFinishLoad、didFailLoadWithError中标记某个链接加载成功。通过总的链接数目和已经加载的链接数目大致估算当前的加载进度。进度通过NJKWebViewProgress 的代理回传到webView的控制器中在控制器中展示当前的进度条。&lt;br&gt;Demo地址：&lt;a href=&quot;https://github.com/mingxianwei/MXWLanchAD&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/mingxianwei/MXWLanchAD&lt;/a&gt;&lt;p&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt; &lt;em&gt;转载请注明出处:&lt;/em&gt;&lt;br&gt;    &lt;em&gt;原文地址：&lt;a href=&quot;http://mingxianwei.github.io/2016/07/05/启动页广告加载-带进度条的webView&quot;&gt;http://mingxianwei.github.io/2016/07/05/启动页广告加载-带进度条的webView&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&lt;em&gt;作者：&lt;a href=&quot;http://weibo.com/u/2501078311&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;小土豆&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
 &lt;/blockquote&gt;

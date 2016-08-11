@@ -1,12 +1,12 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 启动页广告加载+带进度条的webView · 我是一只小小小鸟</title><meta name="description" content="仿网易启动页加载动画&amp; 带进度条的webview"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/u/2501078311" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/mingxianwei" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="http://www.jianshu.com/users/3b591f2af34a/latest_articles" target="_blank" class="nav-list-link">JIANSHU</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">启动页广告加载+带进度条的webView</h1><div class="post-info">2016年07月05日</div><div class="post-content"><p>首先我们看效果图<br>[<img src="http://mingxianwei.github.io/image/MXWLanchAD/MXWLanchAD.gif" alt="">]<br><a id="more"></a></p>
-<p>#1. 启动页部分</p>
-<p>##基本思路如下： </p>
+<p></p><h2>1. 启动页部分</h2><p></p>
+<p></p><h3>##基本思路如下:</h3><p></p>
 <ol>
 <li>在app启动的时候 在window对象上添加一个视图，我这里用的是一张图片 （app启动图）这样就能遮挡住app本来的启动图片。</li>
 <li>在在这个视图上添加一个广告图片，至于这个广告图片里的获取方式可以根据自己地项目的实际情况来定。</li>
 <li>在这个视图上添加一些动画，和一些触摸事件用来处理这个点击广告也对应的事件响应。</li>
 </ol>
-<p>##在这个中需要注意的问题有几点：</p>
+<p></p><h3>在这个中需要注意的问题有几点：</h3><p></p>
 <ol>
 <li>该代码试用用于启动图是使用lanchImage方式而不是LaunchScreen.storyboard/LaunchScreen.xib。</li>
 <li>需要给项目设置几个点如下图:<ul>
@@ -34,7 +34,7 @@
 <li><p>根据对应的屏幕取出对应的图片 添加到窗口上 遮盖启动图就是如图效果。也可以做类似Twitter启动时那样的启动动画，原理基本而一致。</p>
 </li>
 </ol>
-<p>#2. 带进度条的webView的实现<br>其实这里带进度条的webView主要使用到了<code>NJKWebViewProgress</code> 。基本原理就是修改webView的dalegate 使用NJKWebViewProgress 类来loadRequest；NJKWebViewProgress就能够统计一个URL中一共有多少资源需要加载，在webViewDidFinishLoad、didFailLoadWithError中标记某个链接加载成功。通过总的链接数目和已经加载的链接数目大致估算当前的加载进度。进度通过NJKWebViewProgress 的代理回传到webView的控制器中在控制器中展示当前的进度条。<br>Demo地址：<a href="https://github.com/mingxianwei/MXWLanchAD" target="_blank" rel="external">https://github.com/mingxianwei/MXWLanchAD</a></p>
+<p></p><h2>2. 带进度条的webView的实现</h2><br>其实这里带进度条的webView主要使用到了<code>NJKWebViewProgress</code> 。基本原理就是修改webView的dalegate 使用NJKWebViewProgress 类来loadRequest；NJKWebViewProgress就能够统计一个URL中一共有多少资源需要加载，在webViewDidFinishLoad、didFailLoadWithError中标记某个链接加载成功。通过总的链接数目和已经加载的链接数目大致估算当前的加载进度。进度通过NJKWebViewProgress 的代理回传到webView的控制器中在控制器中展示当前的进度条。<br>Demo地址：<a href="https://github.com/mingxianwei/MXWLanchAD" target="_blank" rel="external">https://github.com/mingxianwei/MXWLanchAD</a><p></p>
 <blockquote>
 <p> <em>转载请注明出处:</em><br>    <em>原文地址：<a href="http://mingxianwei.github.io/2016/07/05/启动页广告加载-带进度条的webView">http://mingxianwei.github.io/2016/07/05/启动页广告加载-带进度条的webView</a></em><br><em>作者：<a href="http://weibo.com/u/2501078311" target="_blank" rel="external">小土豆</a></em> </p>
 </blockquote>
